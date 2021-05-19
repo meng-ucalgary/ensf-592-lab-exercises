@@ -2,7 +2,13 @@
 # May 18 Lab 4
 # Documentation Demo Exercise
 
+# General notes:
+# Docstrings start after the function/class declaration, not above it.
+# You are free to use whichever docstring format you prefer (Google, Numpy, etc.) as long as you are consistent through your program.
+# See bottom of file for syntax for printing out your docstring.
 
+
+# THIS COMMENT GETS REMOVED WHEN DOCSTRING IS USED
 # get_user_input prompts for any input entry and returns the input value and its type
 # Argument: Takes in a number to count which input prompt is being given
 # Returns the input value (str object) and its corresponding type (type object)
@@ -15,13 +21,12 @@ def get_user_input(n):
         Returns:
             entry (str): The string input received from the user 
             type(entry): The type of the input
+
     """
     entry = input("Please type any entry #" + str(n + 1) + ": ")
     print(type(entry))
     print(type(type(entry)))
     return entry, type(entry)
-
-
 
 
 # process_user_input prints a value that was previously input and its type
@@ -72,5 +77,5 @@ for i in range(num_of_repeats):
 
 
 
-# Print out our documentation from above!
+# Print out our documentation from get_user_input function above!
 print(get_user_input.__doc__)
