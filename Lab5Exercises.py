@@ -53,6 +53,7 @@ class Horse:
     # define any customized getters/setters
     @age.setter
     def age(self, new_val):
+        print("Happy birthday!")
         return self.__age
 
     # define instance methods
@@ -62,7 +63,7 @@ class Horse:
     # define class methods
     @classmethod
     def horse_info(cls):
-        print("The scientific name of a horse is: " + Horse.sci_name)
+        print("The scientific name of a horse is: " + cls.sci_name)
 
 
 class Rider:
@@ -80,17 +81,41 @@ class Rider:
 def main():
     print("\n***Horse and Rider Program***\n")
 
+    # Class variable and method demo
+    print("Sci name = " + Horse.sci_name)
+    Horse.horse_info()
+
+    horse_demo1 = Horse("Blaze", 14, "bay", "Morgan")
+    horse_demo2 = Horse("Socks", 14, "bay", "Morgan")
+
+    print("Sci name = " + horse_demo1.sci_name)
+    print("Sci name = " + horse_demo2.sci_name)
+
+    Horse.sci_name = "Something else!"
+
+    print("Sci name = " + horse_demo1.sci_name)
+    print("Sci name = " + horse_demo2.sci_name)
+
+    horse_demo1.sci_name = "Different value"
+
+    print("Sci name = " + horse_demo1.sci_name)
+    print("Sci name = " + horse_demo2.sci_name)
+
+    Horse.sci_name = "Change again!"
+
+    print("Sci name = " + horse_demo1.sci_name)
+    print("Sci name = " + horse_demo2.sci_name)
+
+
     # Create five horses and five riders.
-
     horse1 = Horse("Blaze", 14, "bay", "Morgan")
-
     rider1 = Rider("Alex", 34, horse1)
-
 
     # Exercise 1
     # Collect all horse and rider ages and create a single set that lists each number that appears at least once.
     # A large competition is planned for 5 years from now. All riders must be over 20, but under 50. Horses must be over 10 and under 25.
-    # Create a single generator function that can be used to find which horses and riders will be eligible for the competition.
+    # Create either a single generator function or separate generator expressions that can be used to find which horses and riders will be eligible for the competition.
+    # Print out their names.
 
 
     # Exercise 2
@@ -98,7 +123,7 @@ def main():
 
 
     # Exercise 3:
-    # Customize the setter for age by adding an exception. 
+    # Customize the setter for horse age by adding an exception. 
     # Age must be set to a value greater than zero, otherwise a message is printed to the user using a ValueError exception.
 
 
