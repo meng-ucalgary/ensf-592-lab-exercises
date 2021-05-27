@@ -95,14 +95,23 @@ may_data = np.array([array_2021, array_2020, array_2019])
 #print("Full set of data from days 1 to 23 in May 2021, May 2020, May 2019:")
 print(may_data)
 
+
 # Find the highest temperature from 2019 - 2021
 # Find the lowest temperature from 2019 - 2021
 # Find the mean of all measurements from 2019 - 2021
+print("The highest overall temperature is: ", may_data.max())
+print("The lowest overall temperature is: ", may_data.min())
+print("The overall mean temperature is: ", may_data.mean())
+
 # Find the mean for each year
+for i in range(3):
+    print("The mean for May {0} is {1}".format(i + 2019, may_data.mean(axis=1)[2-i,2]))
+
 # Find the mean of all mean temperatures
+print("The mean of all mean temperatures: ", may_data.mean(axis=1)[:,2].mean())
+
 # Find the mean min temperature from 2019 - 2021
+print("The mean of all min temperatures: ", may_data.mean(axis=1)[:,1].mean())
+
 # Find the mean high for May 5 across all years
-
-#print("Full set of data from days 1 to 23 in May 2021, May 2020, May 2019:")
-print(may_data)
-
+print("The mean high for May 5th is: ", may_data.mean(axis=0)[4,0])
